@@ -4,13 +4,13 @@ import { SiGithub } from "react-icons/si";
 
 const SOCIAL_LINKS = [
   {
-    href: "https://github.com/ankitkushwaha",
+    href: "https://github.com/ankit-vecto",
     label: "GitHub",
     icon: SiGithub,
     ocid: "footer.github.link",
   },
   {
-    href: "https://linkedin.com/in/ankitkushwaha",
+    href: "https://www.linkedin.com/in/anky-kushwaha/",
     label: "LinkedIn",
     icon: Linkedin,
     ocid: "footer.linkedin.link",
