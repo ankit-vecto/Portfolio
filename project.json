@@ -1,0 +1,27 @@
+{
+  "overview": "A premium, fully responsive personal portfolio website for Ankit Kushwaha, a Frontend Developer. Features glassmorphism design, dark/light theme, smooth animations, and detailed project showcases.",
+  "features": [
+    "Hero section with animated intro and dual CTAs",
+    "About section with professional bio",
+    "Animated skills section with category cards",
+    "4 detailed project cards with hover effects and modal popups",
+    "Experience timeline",
+    "Contact form with validation and social links",
+    "Dark/light theme toggle",
+    "Sticky blurred navbar with section highlighting",
+    "Scroll-to-top button",
+    "Smooth scroll-based animations throughout"
+  ],
+  "category": "portfolio",
+  "tags": [
+    "portfolio",
+    "frontend",
+    "developer",
+    "personal",
+    "showcase",
+    "react",
+    "animations",
+    "glassmorphism"
+  ],
+  "last_updated": "2026-04-20T18:05:40.005Z"
+}
