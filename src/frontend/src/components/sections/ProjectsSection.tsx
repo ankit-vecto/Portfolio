@@ -22,6 +22,8 @@ const PROJECTS: Project[] = [
     tech: ["React Native", "Expo"],
     gradient: "from-primary/20 to-primary/5",
     icon: "🏠",
+    liveUrl: "https://your-adjuster-app-link.com", // Add your live URL
+    // Remove githubUrl if not applicable
   },
   {
     id: "dentalog-portal",
@@ -38,38 +40,41 @@ const PROJECTS: Project[] = [
     tech: ["Next.js", "Firebase", "Supabase"],
     gradient: "from-accent/20 to-accent/5",
     icon: "🦷",
+    liveUrl: "https://www.getsmilelink.com/",
+    // Add githubUrl if you want to show GitHub link
   },
   {
-    id: "clasp-portal",
-    title: "Clasp Portal",
+    id: "elog-book",
+    title: "Elog Book",
     subtitle: "Web Platform",
     description:
-      "A scalable web application built using Next.js focused on performance and structured architecture. Designed for managing workflows and providing a seamless user experience with modern UI practices.",
+      "A scalable web application built using Next.js focused on performance and structured architecture. Designed for Tracking vehicle & Driver activities and inspections.",
     features: [
-      "Fast and SEO-friendly architecture",
-      "Clean UI with reusable components",
-      "Optimized performance",
-      "Structured workflow management",
+      "Real-time vehicle tracking",
+      "Driver activity monitoring",
+      "Inspection management",
+      "Structured architecture for scalability",
     ],
     tech: ["Next.js", "Tailwind CSS"],
     gradient: "from-primary/15 to-accent/10",
     icon: "🔗",
+    liveUrl: "https://portal-elogbook.up.railway.app/",
   },
   {
-    id: "adjust-vision",
-    title: "Adjust Vision",
-    subtitle: "AI Camera App",
+    id: "renew-app",
+    title: "Renew App",
+    subtitle: "AI-Powered Renewal Platform",
     description:
-      "A smart camera-based mobile application built using React Native and Expo that integrates YOLOv5 model for real-time object detection. Designed for intelligent inspection and automation use cases.",
+      "A cutting-edge renewal platform that leverages AI to streamline the renewal process for businesses. It provides intelligent insights and automated workflows to enhance efficiency and reduce manual effort.",
     features: [
-      "Real-time object detection",
-      "Camera integration",
-      "AI-based inspection",
+      "AI-driven renewal insights",
+      "AI-based renewal analysis",
       "Automation workflows",
     ],
-    tech: ["React Native", "Expo", "YOLOv5"],
+    tech: ["React (Vite)", "Node.js"],
     gradient: "from-accent/20 to-primary/10",
-    icon: "👁️",
+    icon: "🔄️",
+    liveUrl: "https://prudence-renew.vectonium.net/",
   },
 ];
 
@@ -79,6 +84,9 @@ function ProjectModal({
   project,
   onClose,
 }: { project: Project; onClose: () => void }) {
+  const hasLiveUrl = project.liveUrl && project.liveUrl !== "#";
+  const hasGithubUrl = project.githubUrl && project.githubUrl !== "#";
+
   return (
     <dialog
       open
@@ -173,37 +181,61 @@ function ProjectModal({
 
         {/* Footer */}
         <div className="p-7 border-t border-border/30 flex gap-3">
-          <Button
-            size="sm"
-            className="flex-1 bg-primary text-primary-foreground hover:bg-primary/90 shadow-glass shimmer"
-            asChild
-            data-ocid={`projects.${project.id}.live_demo.button`}
-          >
-            <a
-              href={project.liveUrl ?? "#"}
-              target="_blank"
-              rel="noopener noreferrer"
+          {hasLiveUrl ? (
+            <Button
+              size="sm"
+              className="flex-1 bg-primary text-primary-foreground hover:bg-primary/90 shadow-glass shimmer"
+              asChild
+              data-ocid={`projects.${project.id}.live_demo.button`}
+            >
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <ExternalLink className="mr-2 h-3.5 w-3.5" />
+                Live Demo
+              </a>
+            </Button>
+          ) : (
+            <Button
+              size="sm"
+              className="flex-1 bg-primary/50 text-primary-foreground/50 cursor-not-allowed"
+              disabled
             >
               <ExternalLink className="mr-2 h-3.5 w-3.5" />
-              Live Demo
-            </a>
-          </Button>
-          <Button
-            variant="outline"
-            size="sm"
-            className="flex-1 border-border/50 hover:border-primary/40 hover:bg-primary/5"
-            asChild
-            data-ocid={`projects.${project.id}.github.button`}
-          >
-            <a
-              href={project.githubUrl ?? "#"}
-              target="_blank"
-              rel="noopener noreferrer"
+              Live Demo (Coming Soon)
+            </Button>
+          )}
+
+          {hasGithubUrl ? (
+            <Button
+              variant="outline"
+              size="sm"
+              className="flex-1 border-border/50 hover:border-primary/40 hover:bg-primary/5"
+              asChild
+              data-ocid={`projects.${project.id}.github.button`}
+            >
+              <a
+                href={project.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Github className="mr-2 h-3.5 w-3.5" />
+                GitHub
+              </a>
+            </Button>
+          ) : (
+            <Button
+              variant="outline"
+              size="sm"
+              className="flex-1 border-border/30 text-muted-foreground cursor-not-allowed"
+              disabled
             >
               <Github className="mr-2 h-3.5 w-3.5" />
-              GitHub
-            </a>
-          </Button>
+              Private Repo
+            </Button>
+          )}
         </div>
       </motion.div>
     </dialog>
