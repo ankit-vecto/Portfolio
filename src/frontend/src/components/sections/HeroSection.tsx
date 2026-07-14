@@ -161,7 +161,7 @@ export function HeroSection() {
               ocid: "hero.github.link",
             },
             {
-              href: "https://linkedin.com/in/ankitkushwaha",
+              href: "https://www.linkedin.com/in/anky-kushwaha/",
               Icon: Linkedin,
               label: "LinkedIn",
               ocid: "hero.linkedin.link",

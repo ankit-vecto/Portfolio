@@ -66,8 +66,8 @@ const CONTACT_ITEMS = [
   {
     icon: Linkedin,
     label: "LinkedIn",
-    value: "linkedin.com/in/ankitkushwaha",
-    href: "https://linkedin.com/in/ankitkushwaha",
+    value: "linkedin.com/in/anky-kushwaha",
+    href: "https://www.linkedin.com/in/anky-kushwaha/",
     ocid: "contact.linkedin.link",
     color: "text-primary",
     bg: "bg-primary/10",
@@ -219,7 +219,7 @@ export function ContactSection() {
                   label: "GitHub",
                 },
                 {
-                  href: "https://linkedin.com/in/ankitkushwaha",
+                  href: "https://www.linkedin.com/in/anky-kushwaha/",
                   Icon: Linkedin,
                   label: "LinkedIn",
                 },
